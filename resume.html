@@ -1,0 +1,697 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>문지원</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="29863dd3-92d8-4cfd-ad1a-304b9083debc" class="page sans"><header><h1 class="page-title">문지원</h1><p class="page-description"></p></header><div class="page-body"><p id="05d0211a-5482-4598-87c3-814f560098a0" class="">이메일 :<br/>연락처 :<br/>Github : <br/>블로그 :<br/></p><hr id="07f1ea96-116f-4445-bdef-3c3451368409"/><ul id="4b1d703d-993b-4293-aebb-800175426c9d" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><ul id="c6be39d3-8d9b-4fa9-adf3-deb7885d233c" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><ul id="3f1a2217-fd33-4428-a8fd-88630ed806d2" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><ul id="e45bbd9b-d96f-4259-b853-d43dab9ecefa" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><hr id="c97249c1-9d1d-499a-bbaa-72a1b1198eab"/><div id="9d7611b2-8358-46fe-a1f6-54935c04e8d9" class="column-list"><div id="e5c55899-6c0a-4c9f-ae2b-d3ce97f79b8f" style="width:18.75%" class="column"><h3 id="369b6069-e2ad-4f35-9345-8f75ec0e8d88" class="">경력</h3><p id="2fdc2733-bb02-4a3a-9b48-6e4557fab2e4" class="">
+</p><p id="e7825132-0620-4eef-a09b-cfdf26312912" class="">
+</p></div><div id="cb610dea-8dc3-4f66-9a4e-8331e65a2283" style="width:81.24999999999997%" class="column"><h3 id="2f5b84ef-2fd7-4a8c-8b48-e35ea2cfb44a" class=""><strong>(주) 가나다</strong></h3><p id="24a57af5-b141-4ae1-8e4e-2aaafc65c947" class="">프론트엔드 / <br/><br/><mark class="highlight-gray"><em>YYYY.MM ~ YYYY.MM</em></mark></p><p id="daa50d93-7340-41ac-8506-e4fcc867469d" class="">[주요 언어 및 기술] React, JavaScript</p><p id="6abb96c7-6590-44ca-ad8f-8558bff4d200" class="">
+</p><ul id="18208aad-e3bf-4b53-8635-7f151e932706" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><ul id="76b71b37-950c-475e-9b53-3783e4fdd546" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><ul id="c81c8ea4-7a18-41a6-a6ce-372409c2cd59" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul></div></div><hr id="dcf58708-d18f-447c-b055-41e347b5aac8"/><div id="46272fce-9f35-409f-b16c-a763e6851c35" class="column-list"><div id="d0f57e7b-f1c6-4071-84d0-e2c278f03684" style="width:18.75%" class="column"><h3 id="6d828117-41d9-4775-9c17-9a3c14a90326" class="">오픈소스</h3><p id="482eee19-456f-4985-a9ac-9b8f98e23155" class="">
+</p><p id="992c9509-a6eb-4a31-953b-5f05ede429a5" class="">
+</p></div><div id="ab297d37-a53f-4244-9ef0-e2f9e71de8d1" style="width:81.24999999999997%" class="column"><h3 id="ed3cbbe0-c0ac-4b36-a008-b4eaa62d9d1a" class="">가나다</h3><p id="27b421b5-a347-4677-9e9a-1f0c5aff45f4" class=""><mark class="highlight-gray"><em>YYYY.MM ~ YYYY.MM</em></mark></p><p id="a65ca30e-7536-4628-b56d-76f20294c300" class="">가나다에 대해</p><p id="b24c8c49-4831-4801-a49d-58408b3648a9" class="">[주요 언어 및 기술] TypeScript</p><p id="4861a8d2-65b1-4163-a97e-13eae0980b76" class="">
+</p><ul id="18643da0-b1ff-4002-bfe9-5a6d4c60c5e4" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><ul id="18c12381-5c22-48c6-8ed4-c66b71369ef5" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><ul id="c29fb565-05cc-4d23-afda-ac3ca4f9f88c" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><p id="f6182668-10d1-410d-bff8-5831c1f6a768" class="">
+</p><p id="8e019ecd-929c-4c44-b1b5-fd7c20e47dae" class="">[Github] <a href="http://www.asd.com">www.asd.com</a></p><p id="bbfedbb5-7ae7-4798-b410-61d0460f08ff" class="">[관련 포스트] <a href="http://www.asd.com">www.asd.com</a></p><p id="c3d59030-ecb1-4faf-8cbf-0d0b2fcc4923" class="">
+</p></div></div><hr id="0fc85795-d28c-49f0-a01c-2931035571e7"/><div id="70c91838-a5d9-43b5-baf4-89da2288ab9a" class="column-list"><div id="38bcd8a4-a3a2-47f1-accd-f61de2c44e73" style="width:18.75%" class="column"><h3 id="d56592a6-8dc0-4dfc-82c9-4a4ee9d35516" class="">프로젝트</h3></div><div id="22576b04-6c8d-460a-b117-7b4a8b7ebc3b" style="width:81.24999999999997%" class="column"><h3 id="d4f50ecf-5ec7-40f9-bb36-c4592f7b70d7" class="">프로젝트</h3><p id="a463cdc9-e2b7-4c8f-9bcb-a26b40aa47b4" class=""><mark class="highlight-gray"><em>YYYY.MM ~ 진행중</em></mark></p><p id="6557a20e-2a24-4237-8682-3984e60d5a39" class="">가나다에 대해</p><p id="7c8d9ffd-a12f-404c-83b7-4ca30e99d6c7" class="">[주요 언어 및 기술] Next.js</p><p id="f98fd63e-2947-476c-bafb-706f5bbca001" class="">
+</p><ul id="81c4a7fa-88c3-4035-8718-23a50c2e3d53" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><ul id="ee926758-4e38-45c6-9663-672678e9c834" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><ul id="941433f2-21b3-4009-8e54-598da5c7c006" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><p id="02a643e2-df0f-49b9-afea-7df2034dee9a" class="">
+</p><p id="d56550e1-9a69-4e51-b7f1-d515d8669664" class="">[배포 링크] <a href="http://www.asd.com">www.asd.com</a></p><p id="e54092df-b104-434b-9bc0-a024c9a4217a" class="">[Github] <a href="http://www.asd.com">www.asd.com</a></p><p id="9a2e63b0-9c80-4e16-b7c7-7d6bff00785b" class="">[관련 포스트] <a href="http://www.asd.com">www.asd.com</a></p><p id="17f1eca8-430b-471b-9c22-d431778424ef" class="">
+</p><hr id="c3997e2e-a4f8-4fea-ba46-267f1029318d"/><h3 id="12c833af-01aa-48d9-b4e8-713056fd20c7" class="">프로젝트</h3><p id="222dfe5a-909c-4541-9a4b-690ae4698f7c" class=""><mark class="highlight-gray"><em>YYYY.MM ~ 진행중</em></mark></p><p id="3dfd69ba-4d60-4d58-9b4f-1717f1967494" class="">가나다에 대해</p><p id="c7c8aac4-dde2-42d4-811d-7c706252130c" class="">[주요 언어 및 기술] Next.js</p><p id="4ba354ce-eaa4-402d-853f-f3889ceb040a" class="">
+</p><ul id="61a072bf-f29f-4ed6-8b01-a9ab8075c1b8" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><ul id="017863fd-92df-4694-b1c3-63f313d66d68" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><ul id="f6e0047b-6c0c-4079-b1ac-b8b5442802b0" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><p id="892c8a6a-f8be-4a0e-834a-e1694a61627b" class="">
+</p><p id="975b7218-ccfe-408e-9789-a66c4e696553" class="">[배포 링크] <a href="http://www.asd.com">www.asd.com</a></p><p id="91f591d6-da95-4a48-bb92-d6d0feeead1e" class="">[Github] <a href="http://www.asd.com">www.asd.com</a></p><p id="29fccb46-2910-499d-bd5d-3d82c4b2578a" class="">[관련 포스트] <a href="http://www.asd.com">www.asd.com</a></p></div></div><hr id="ba4c5eec-f375-4d8c-be6e-d606c7bbfa3e"/><div id="9b6b979e-5b6b-4d00-a392-2bff795eb86b" class="column-list"><div id="85d15925-19ac-4302-8527-195cf26f77de" style="width:18.75%" class="column"><h3 id="55474d93-1d07-47a3-8daa-6a98d71f5c1d" class="">학력</h3></div><div id="19459994-20d8-4575-a9fc-79932deedd78" style="width:81.25%" class="column"><h3 id="cb802761-c69b-4645-abb1-c577a0687618" class="">A대학교</h3><p id="d8061bc9-3655-40d6-bbc5-4182c4cebfe8" class=""><mark class="highlight-gray"><em>YYYY.MM ~ YYYY.MM</em></mark></p><p id="a657f271-42bb-465b-9aeb-6750ac5506a6" class="">경제학부 학사</p></div></div><hr id="a0827628-7f69-455b-86b6-3dab2e0920f4"/><div id="9663cdf4-3e4e-4c86-b135-6ad3522ec56f" class="column-list"><div id="83d3ebaa-54f6-41d7-bf02-499ff107bac7" style="width:18.75%" class="column"><h3 id="4d40aefd-d3c9-4edb-9716-efb0d15daeb3" class="">스킬</h3></div><div id="1656682a-b905-4eaa-8bca-4160b841aa42" style="width:81.25%" class="column"><h3 id="0b68d07a-4139-49cc-828e-2876529b571b" class="">JavaScript, TypeScript, React.js, Next.js, HTML, CSS</h3><p id="cf660d47-b15d-412d-b1ab-465ca1cb772d" class="">
+</p></div></div><hr id="fbbeabbc-e128-4ff1-a21c-18bb73de4858"/><div id="32b52725-f7b7-475c-9bb1-eadae19b29f8" class="column-list"><div id="df8e325a-cba5-45fb-9645-4c74d9f9d981" style="width:18.75%" class="column"><h3 id="44a5d31e-95df-48e3-83aa-af9bff6fe707" class="">교육 및 기타</h3><p id="f0ff049f-a615-4a8b-a8fa-3c99647e5a6d" class="">
+</p></div><div id="f2612957-918b-45ab-8be3-52e3f1d8d5eb" style="width:81.25%" class="column"><h3 id="6ddd0a3f-559f-4c58-b461-070934073335" class="">가나다 | 가나다에 대해</h3><p id="9f99eb3d-5f3e-48c4-8fdb-0f7a62f8a895" class=""><mark class="highlight-gray"><em>YYYY.MM ~ YYYY.MM</em></mark></p><ul id="74bfa495-0531-40c5-a571-4ae5753e5fe8" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><ul id="055baf29-3e9c-42dc-8137-69635a6fb702" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><p id="99681537-3ed1-4c13-af64-aea1b875808e" class="">
+</p><p id="964f2acd-3187-497d-a892-4764384143bb" class="">[링크] www.asd.com</p><p id="71b47657-1a5b-47c2-b86a-7d79503d76a7" class="">
+</p><h3 id="5eb37162-b901-4472-ab2e-9dbd3317d422" class="">가나다 | 가나다에 대해</h3><p id="478abdd7-e60d-4720-ab10-c9b91478ebde" class=""><mark class="highlight-gray"><em>YYYY.MM ~ YYYY.MM</em></mark></p><ul id="8646a6f8-a9d6-41dc-a996-7f24b4219674" class="bulleted-list"><li style="list-style-type:disc">가나다</li></ul><p id="2f456179-a889-474a-91ae-fbbaa4151eb3" class="">
+</p></div></div><hr id="1d1d6cf7-d707-4722-9374-90c43e1b8b9e"/><div id="6765f52c-02a2-4fb2-b768-703ecf78e536" class="column-list"><div id="b2ab9c40-417e-4310-b7be-5cf2f67769a0" style="width:18.75%" class="column"><h3 id="2dad7fe3-9012-4d92-97ec-f7ef9211f4d4" class="">외국어</h3><p id="c5c9f3a1-c7b6-47a4-b99b-d4bedf279df2" class="">
+</p></div><div id="ccb83c4d-baf4-4490-9ebe-a5987b1aec2b" style="width:81.25%" class="column"><h3 id="6591b951-469d-4a87-be17-ce4715d61853" class="">영어</h3><p id="9aee29b1-54a5-4f6d-84c1-9ecb486973c1" class="">비즈니스 회화</p><ul id="bde639be-918f-4d78-a959-232eb05ef4ae" class="bulleted-list"><li style="list-style-type:disc">토익</li></ul></div></div><hr id="d4688f90-1a7e-4c2c-bace-2a103db2ff4d"/><div id="c3616d1a-e78d-48a9-a8c0-b36a4155334c" class="column-list"><div id="54ff78c5-405a-4cf1-b4a6-23eb295ec37b" style="width:18.75%" class="column"><h3 id="dc803af9-56e9-4c2b-a519-ace3ee483a13" class="">링크</h3><p id="2f973c57-b46c-406f-a2f5-491a23fa9ce3" class="">
+</p></div><div id="f17d3917-a976-4c4b-add8-beaf2393a5db" style="width:81.25%" class="column"><p id="cd97c923-8925-4ded-b629-25684ab668ae" class="">
+</p></div></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
